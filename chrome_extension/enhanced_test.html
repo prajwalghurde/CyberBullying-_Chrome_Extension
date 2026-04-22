@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enhanced Text Selection Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .test-area {
+            margin: 20px 0;
+            padding: 20px;
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .highlight {
+            background-color: yellow;
+            padding: 2px 4px;
+        }
+        .instructions {
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .step {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #fff3e0;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #3367d6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enhanced Text Selection Test</h1>
+    
+    <div class="instructions">
+        <h3>Testing the Enhanced Extension:</h3>
+        <div class="step">1. Make sure your Chrome extension is installed and enabled</div>
+        <div class="step">2. Ensure your FastAPI backend is running on http://localhost:8000</div>
+        <div class="step">3. Select text using ANY of the methods below</div>
+        <div class="step">4. Click the extension icon - selected text should appear automatically!</div>
+    </div>
+
+    <div class="test-area">
+        <h2>Mouse Selection Test</h2>
+        <p>Select this text with your mouse: <span class="highlight">The quick brown fox jumps over the lazy dog</span></p>
+        <p>Try selecting multiple sentences: <span class="highlight">This is a longer piece of text that spans multiple sentences. Notice how the extension captures everything you select.</span></p>
+    </div>
+
+    <div class="test-area">
+        <h2>Keyboard Selection Test</h2>
+        <p>Place cursor here and use Shift+Arrow keys to select: <span class="highlight">Keyboard selection should work perfectly with this extension</span></p>
+        <p>Double-click to select entire words: <span class="highlight">DoubleClickMe</span></p>
+    </div>
+
+    <div class="test-area">
+        <h2>Bullying Content Tests</h2>
+        <p><span class="highlight">You are such a complete idiot and nobody likes you</span></p>
+        <p><span class="highlight">I hate you so much and wish you would just disappear forever</span></p>
+        <p><span class="highlight">@username you are absolutely disgusting and deserve to die</span></p>
+    </div>
+
+    <div class="test-area">
+        <h2>Non-Bullying Content Tests</h2>
+        <p><span class="highlight">Have a wonderful day and take care of yourself!</span></p>
+        <p><span class="highlight">Thank you so much for your help, I really appreciate it</span></p>
+        <p><span class="highlight">This is incredible work, you should be proud of your accomplishments</span></p>
+    </div>
+
+    <div class="test-area">
+        <h2>Interactive Test</h2>
+        <p>Try copying text to clipboard (Ctrl+C): <span class="highlight">Copy this text and see if the extension captures it</span></p>
+        <p>Test with very short selections: "<span class="highlight">Short</span>"</p>
+        <p>Test with longer paragraphs:</p>
+        <blockquote>
+            <span class="highlight">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
+        </blockquote>
+    </div>
+
+    <div class="instructions">
+        <h3>What Should Happen:</h3>
+        <ul>
+            <li>✅ Text appears instantly in extension popup when you click the icon</li>
+            <li>✅ Text is automatically focused and selected for easy editing</li>
+            <li>✅ Works with mouse selection, keyboard selection, and double-click</li>
+            <li>✅ Handles both short and long text selections</li>
+            <li>✅ Preserves @mentions and special characters</li>
+            <li>✅ Recent selections are prioritized (within 5 minutes)</li>
+        </ul>
+        
+        <h3>Troubleshooting:</h3>
+        <ul>
+            <li>If text doesn't appear, try selecting it again and immediately clicking the extension</li>
+            <li>Check Chrome console (Ctrl+Shift+J) for any error messages</li>
+            <li>Refresh the webpage if the content script isn't loading properly</li>
+            <li>Verify the extension has proper permissions in chrome://extensions</li>
+        </ul>
+    </div>
+
+    <button onclick="window.location.reload()">Refresh Test Page</button>
+    <button onclick="alert('Select some text above, then click the extension icon!')">Test Instructions</button>
+</body>
+</html>
